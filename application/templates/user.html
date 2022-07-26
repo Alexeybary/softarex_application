@@ -2,7 +2,15 @@
 
 {% block content %}
     <h1>User: {{ user.name }}</h1>
+    <h1>Count_of_dimension: {{ user.count_of_dimension }}</h1>
     {% if user == current_user %}
             <p><a href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
             {% endif %}
+     <form action="" method="post">
+     <h1>Download as pdf</h1>
+        <p>{{ download_pdf.save_pdf() }}</p>
+     <h1>Download as json</h1>
+        <p>{{ download_json.save_json() }}</p>
+
+    </form>
 {% endblock %}

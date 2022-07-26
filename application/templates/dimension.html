@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>To calculate</h1>
+   <form method="POST" action="" enctype="multipart/form-data" novalidate>
+      <p><input type="file" name="file"></p>
+       <p>
+            {{ form.dimension_name.label }}<br>
+            {{ form.dimension_name(size=32) }}
+        </p>
+       <p>{{ form.upload() }}</p>
+    </form>
+
+{% endblock %}
