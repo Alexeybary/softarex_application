@@ -1,8 +1,13 @@
-2022-07-26 12:06:19,071 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:09:49,838 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:11:52,630 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:14:27,456 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:14:30,494 ERROR: Exception on /dimension [GET] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
+2022-07-26 22:55:26,932 ERROR: Exception on / [GET] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: info_table
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,97 +17,72 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 99, in dimension
-    if UploadForm.is_submitted():
-TypeError: is_submitted() missing 1 required positional argument: 'self'
-2022-07-26 12:14:56,590 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:16:41,763 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:23:16,616 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:48:46,323 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:49:37,958 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:50:10,591 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:57:32,457 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:57:37,962 ERROR: Exception on /user/b [POST] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 67, in user
-    create_file()
-  File "/home/alexey/PycharmProjects/flaskProject/application/create_files.py", line 16, in create_file
-    canvas.drawImage()
-TypeError: drawImage() missing 3 required positional arguments: 'image', 'x', and 'y'
-2022-07-26 12:57:52,246 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:57:57,215 ERROR: Exception on /user/b [POST] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 67, in user
-    create_file()
-  File "/home/alexey/PycharmProjects/flaskProject/application/create_files.py", line 21, in create_file
-    f = Table(data)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/reportlab/platypus/tables.py", line 296, in __init__
-    self._cellvalues = data = self.normalizeData(data)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/reportlab/platypus/tables.py", line 389, in normalizeData
-    outRow = [normCell(cell) for cell in row]
-TypeError: 'int' object is not iterable
-2022-07-26 12:58:32,701 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 12:58:59,770 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 13:03:27,505 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 13:10:09,746 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 13:10:16,593 ERROR: Exception on /user/b [POST] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 67, in user
-    create_pdf(user.name)
-  File "/home/alexey/PycharmProjects/flaskProject/application/create_files.py", line 19, in create_pdf
-    t = Table(data, 5 * [0.4 * inch], 4 * [0.4 * inch])
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/reportlab/platypus/tables.py", line 309, in __init__
-    raise ValueError("%s data error - %d rows in data but %d in row heights" % (self.identity(),nrows, len(rowHeights)))
-ValueError: <Table@0x7FD26B7C5FD0 6 rows x 2 cols> with cell(0,0) containing
-'Name of dimension' data error - 6 rows in data but 4 in row heights
-2022-07-26 13:10:57,629 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
-2022-07-26 13:11:03,003 ERROR: Exception on /user/b [POST] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 67, in user
-    create_pdf(user.name)
-  File "/home/alexey/PycharmProjects/flaskProject/application/create_files.py", line 19, in create_pdf
-    t = Table(data,  2* [0.4 * inch], len(a)* [0.4 * inch])
-TypeError: object of type 'BaseQuery' has no len()
-2022-07-26 13:11:37,749 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 15, in index
+    if current_user.is_authenticated:
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/werkzeug/local.py", line 278, in __get__
+    obj = instance._get_current_object()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/werkzeug/local.py", line 407, in _get_current_object
+    return self.__local()  # type: ignore
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 384, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/login_manager.py", line 355, in _load_user
+    user = self._user_callback(user_id)
+  File "/home/alexey/PycharmProjects/flaskProject/application/models.py", line 41, in load_user
+    return User.query.get(int(id))
+  File "<string>", line 2, in get
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/util/deprecations.py", line 402, in warned
+    return fn(*args, **kwargs)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 943, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 947, in _get_impl
+    return self.session._get_impl(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2912, in _get_impl
+    return db_load_fn(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1712, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 332, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 208, in raise_
+    raise exception
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: info_table
+[SQL: SELECT info_table.id AS info_table_id, info_table.name AS info_table_name, info_table.password AS info_table_password, info_table.count_of_dimension AS info_table_count_of_dimension 
+FROM info_table 
+WHERE info_table.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-07-26 22:55:58,726 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 22:56:15,205 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 22:59:25,956 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:00:32,813 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:03:36,627 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:04:34,423 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:04:41,919 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:04:57,063 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:07:11,455 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:07:43,237 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:10:56,864 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:13:20,319 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:13:57,413 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:17:08,763 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:33]
+2022-07-26 23:18:20,086 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 23:19:16,089 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 23:19:59,422 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 23:20:23,616 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 23:21:37,906 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]
+2022-07-26 23:23:12,274 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:32]

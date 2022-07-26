@@ -10,7 +10,7 @@ class User(UserMixin, db.Model):
     password=db.Column(db.String())
     count_of_dimension=db.Column(db.Integer,default=0)
 
-    def __init__(self, name,psw,):
+    def __init__(self, name,psw):
         self.name = name
         self.password=psw
 
@@ -19,6 +19,7 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return self.password == password
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))

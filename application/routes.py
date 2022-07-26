@@ -61,14 +61,13 @@ def signin():
 @app.route('/user/<username>', methods=['GET', 'POST'])
 @login_required
 def user(username):
-    download_pdf=Download_pdf()
-    download_json=Download_json()
     user = User.query.filter_by(name=username).first_or_404()
-    if download_pdf.is_submitted():
-        create_pdf(user.name)
-    if download_json.is_submitted():
-        create_json(user.name)
-    return render_template('user.html', user=user,download_pdf=download_pdf,download_json=download_json)
+    if request.method == 'POST':
+        if request.form['submit_button'] == 'download_json':
+            create_json(user.name)
+        if request.form['submit_button'] == 'download_pdf':
+            create_pdf(user.name)
+    return render_template('user.html', user=user)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required

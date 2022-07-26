@@ -9,11 +9,13 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_object(Config)
 app.config['SECRET_KEY'] = 'new_password'
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:new_password@localhost:5432/flask_db"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:new_password@localhost:5432/flask_db"
+db_dir="flask_db.db"
+app.config['SQLALCHEMY_DATABASE_URI'] ="sqlite:///" + os.path.abspath(db_dir)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy()
 db.init_app(app)
-migrate = Migrate(app, db)
+migrate = Migrate(app, db,render_as_batch=True)
 login = LoginManager(app)
 from application import routes, models
 if not app.debug:
