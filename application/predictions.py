@@ -1,9 +1,11 @@
 import pickle
 import sklearn
 import pandas as pd
-
+import os
 filename = 'model_v1.pk'
-with open('/home/alexey/PycharmProjects/flaskProject/static/' + filename, 'rb') as f:
+filename_dir="static/"+filename
+os.path.abspath(filename_dir)
+with open(os.path.abspath(filename_dir), 'rb') as f:
     loaded_model = pickle.load(f)
 
 
