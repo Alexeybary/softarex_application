@@ -1,0 +1,62 @@
+2022-07-26 13:11:43,047 ERROR: Exception on /user/b [POST] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 67, in user
+    create_pdf(user.name)
+  File "/home/alexey/PycharmProjects/flaskProject/application/create_files.py", line 21, in create_pdf
+    t = Table(data,  2* [0.4 * inch], size* [0.4 * inch])
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/reportlab/platypus/tables.py", line 309, in __init__
+    raise ValueError("%s data error - %d rows in data but %d in row heights" % (self.identity(),nrows, len(rowHeights)))
+ValueError: <Table@0x7FB116641FD0 6 rows x 2 cols> with cell(0,0) containing
+'Name of dimension' data error - 6 rows in data but 5 in row heights
+2022-07-26 13:11:58,575 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:13:00,986 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:14:48,336 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:15:45,926 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:16:37,860 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:17:42,734 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:18:12,369 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:18:45,555 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:38:57,062 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:42:51,919 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
+2022-07-26 13:42:56,480 ERROR: Exception on /user/b [GET] [in /home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask_login/utils.py", line 303, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/alexey/PycharmProjects/flaskProject/application/routes.py", line 71, in user
+    return render_template('user.html', user=user,download_pdf=download_pdf)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    return _render(
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/alexey/PycharmProjects/flaskProject/application/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/alexey/PycharmProjects/flaskProject/application/templates/base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/alexey/PycharmProjects/flaskProject/application/templates/user.html", line 13, in block 'content'
+    <p>{{ download_json.save_json() }}</p>
+  File "/home/alexey/PycharmProjects/flaskProject/venv/lib/python3.8/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'download_json' is undefined
+2022-07-26 13:43:24,037 INFO: Microblog startup [in /home/alexey/PycharmProjects/flaskProject/application/__init__.py:30]
