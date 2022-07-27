@@ -12,7 +12,7 @@
             <a href="/index">Home</a>
             <a href="/login">Login</a>
             <a href="/logout">Logout</a>
-            <a href="/signin">signin</a>
+            <a href="/signin">signUp</a>
             {% if current_user.is_authenticated %}
             <a href="/dimension">dimension</a>
             <a href="{{ url_for('user', username=current_user.name) }}">Profile</a>
