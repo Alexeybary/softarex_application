@@ -8,5 +8,5 @@ Notebook with preparing machine learning model is in "machine learning model"
 2) If it needed, creating virtualenv with code: python -m venv my_venv
 3) Install dependencies with code: $ pip install -r ./requirements.txt #
 4) run flaskproject.py
-Note:
+
 downloaded data saves into your project folder
