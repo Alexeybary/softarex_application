@@ -64,9 +64,15 @@ def user(username):
     user = User.query.filter_by(name=username).first_or_404()
     if request.method == 'POST':
         if request.form['submit_button'] == 'download_json':
-            create_json(user.name)
+            if user.count_of_dimension==0:
+                flash("you haven't got any dimension ")
+            else:
+                create_json(user.name)
         if request.form['submit_button'] == 'download_pdf':
-            create_pdf(user.name)
+            if user.count_of_dimension == 0:
+                flash("you haven't got any dimension ")
+            else:
+                create_pdf(user.name)
     return render_template('user.html', user=user)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
@@ -116,6 +122,7 @@ def dimension():
                 flash('file upload succesfully')
             except:
                 flash('Invalid Data')
+        else:flash('Invalid Data')
     else:
         flash('please load .csv file')
     return render_template('dimension.html', title='To Calculate', form=form)
