@@ -110,19 +110,21 @@ def dimension():
     if form.is_submitted():
         if (check_file(form.file.data)):
             try:
-
                 predict = make_prediction(form.file.data)
                 for i in range(len(predict)):
                     dimens = predict[i]
                     dimension_name = form.dimension_name.data + str(i)
+                    # if request.method == 'POST':
+                    #     if request.form['options']=="option3":
+                    flash(dimension_name+"      "+str(dimens))
                     new_dimens = Dimension(name=current_user.name, dimension=dimens, dimension_name=dimension_name)
                     current_user.count_of_dimension += 1
                     db.session.add(new_dimens)
                     db.session.commit()
-                flash('file upload succesfully')
             except:
                 flash('Invalid Data')
-        else:flash('Invalid Data')
+        else:
+            flash('Invalid Data')
     else:
         flash('please load .csv file')
-    return render_template('dimension.html', title='To Calculate', form=form)
+    return render_template('dimension.html', title='To Calculate', form=form,)
